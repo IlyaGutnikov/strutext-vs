@@ -137,6 +137,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\strutext-master\morpho\morpholib\suffix_storage.h" />
+    <ClInclude Include="morpho.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
