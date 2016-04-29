@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  AssemblyInfo.cpp
+  main.cpp
+  Generating Code...
+  .NETFramework,Version=v4.5.AssemblyAttributes.cpp
+  AssemblyInfo.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  morpho.vcxproj -> C:\Users\igutnikov\git\strutext-vs\morpho\Debug\morpho.exe
+  morpho.vcxproj -> C:\Users\igutnikov\git\strutext-vs\morpho\Debug\morpho.pdb (Partial PDB)
