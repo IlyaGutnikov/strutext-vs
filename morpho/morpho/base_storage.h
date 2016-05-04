@@ -25,8 +25,8 @@
 #include <iostream>
 #include <memory>
 
-#include <boost/noncopyable.hpp>
-#include <boost/shared_ptr.hpp>
+#include "boost/noncopyable.hpp"
+#include "boost/shared_ptr.hpp"
 
 namespace strutext { namespace morpho {
 

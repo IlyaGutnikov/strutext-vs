@@ -32,3 +32,4 @@ Debug/
 .vs/
 lib/
 morpho/lib/
+ipch/

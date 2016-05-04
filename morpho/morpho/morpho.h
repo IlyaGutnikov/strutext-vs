@@ -28,13 +28,13 @@
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
 
-#include "utf8_iterator.h"
-#include "utf8_generator.h"
-#include "flex_transitions.h"
-#include "serializer.h"
-#include "trie.h"
-#include "fsm_defs.h"
-#include "alphabet.h"
+#include "encode/utf8_iterator.h"
+#include "encode/utf8_generator.h"
+#include "automata/flex_transitions.h"
+#include "automata/serializer.h"
+#include "automata/trie.h"
+#include "automata/fsm_defs.h"
+#include "alphabets/alphabet.h"
 #include "suffix_storage.h"
 #include "base_storage.h"
 
