@@ -27,7 +27,7 @@
 
 #include <boost/iterator/iterator_facade.hpp>
 
-#include "symbols.h"
+#include "symbols/symbols.h"
 
 namespace strutext { namespace utility {
 

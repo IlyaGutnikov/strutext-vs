@@ -22,7 +22,7 @@
 #include <vector>
 #include <algorithm>
 
-#include "trie.h"
+#include "automata/trie.h"
 
 namespace strutext { namespace automata {
 

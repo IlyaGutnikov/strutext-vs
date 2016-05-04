@@ -24,9 +24,9 @@
 
 #include <boost/algorithm/string.hpp>
 
-#include "aot_parser.h"
-#include "eng_alphabet.h"
-#include "eng_model.h"
+#include "aot/aot_parser.h"
+#include "alphabets/eng_alphabet.h"
+#include "models/eng_model.h"
 
 namespace strutext { namespace morpho {
 

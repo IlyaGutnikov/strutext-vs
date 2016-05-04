@@ -16,7 +16,7 @@
  * \author Vladimir Lapshin.
  */
 
-#include "automata.h"
-#include "nfa.h"
-#include "nfa_operations.h"
-#include "nfa_printer.h"
+#include "automata/automata.h"
+#include "automata/nfa.h"
+#include "automata/nfa_operations.h"
+#include "automata/nfa_printer.h"

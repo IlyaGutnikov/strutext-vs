@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include "attr_fsm.h"
+#include "automata/attr_fsm.h"
 
 namespace strutext { namespace automata {
 

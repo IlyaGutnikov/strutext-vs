@@ -18,8 +18,8 @@
 
 #pragma once
 
-#include "filter_iterator.h"
-#include "symbols.h"
+#include "utility/filter_iterator.h"
+#include "symbols/symbols.h"
 
 namespace strutext { namespace utility {
 

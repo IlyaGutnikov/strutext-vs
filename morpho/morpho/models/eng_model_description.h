@@ -21,7 +21,7 @@
 #include <string>
 #include <sstream>
 
-#include "eng_model.h"
+#include "models/eng_model.h"
 
 namespace strutext { namespace morpho {
 

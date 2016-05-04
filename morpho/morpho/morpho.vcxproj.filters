@@ -27,9 +27,6 @@
     <ClInclude Include="morpho.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\strutext-master\morpho\morpholib\suffix_storage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">

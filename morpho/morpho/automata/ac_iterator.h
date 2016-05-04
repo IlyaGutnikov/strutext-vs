@@ -22,7 +22,7 @@
 
 #include <boost/iterator/iterator_facade.hpp>
 
-#include "aho_corasick.h"
+#include "automata/aho_corasick.h"
 
 namespace strutext { namespace automata {
 

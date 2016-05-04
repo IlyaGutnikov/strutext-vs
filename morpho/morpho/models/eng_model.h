@@ -23,7 +23,7 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 
-#include "model.h"
+#include "models/model.h"
 
 namespace strutext { namespace morpho {
 

@@ -28,7 +28,7 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 
-#include "trie.h"
+#include "automata/trie.h"
 
 namespace strutext { namespace automata {
 

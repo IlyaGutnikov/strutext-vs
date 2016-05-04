@@ -16,7 +16,7 @@
  * \author Vladimir Lapshin.
  */
 
-#include "char_unicode32_decoder.h"
+#include "encode/char_unicode32_decoder.h"
 
 namespace strutext { namespace encode {
 

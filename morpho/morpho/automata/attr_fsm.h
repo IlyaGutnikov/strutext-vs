@@ -22,7 +22,7 @@
 
 #include <vector>
 
-#include "fsm.h"
+#include "automata/fsm.h"
 
 namespace strutext { namespace automata {
 

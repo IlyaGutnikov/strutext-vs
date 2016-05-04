@@ -25,7 +25,7 @@
 #include <map>
 #include <queue>
 
-#include "nfa.h"
+#include "automata/nfa.h"
 
 namespace strutext { namespace automata {
 

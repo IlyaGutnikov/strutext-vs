@@ -24,11 +24,11 @@
 #include <stdexcept>
 #include <vector>
 
-#include "flat_transitions.h"
-#include "flex_transitions.h"
-#include "fsm.h"
-#include "attr_fsm.h"
-#include "aho_corasick.h"
+#include "automata/flat_transitions.h"
+#include "automata/flex_transitions.h"
+#include "automata/fsm.h"
+#include "automata/attr_fsm.h"
+#include "automata/aho_corasick.h"
 
 namespace strutext { namespace automata {
 

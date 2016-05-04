@@ -20,7 +20,7 @@
 
 #include <map>
 
-#include "fsm_defs.h"
+#include "automata/fsm_defs.h"
 
 namespace strutext { namespace automata {
 

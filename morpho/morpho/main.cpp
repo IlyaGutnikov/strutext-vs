@@ -17,15 +17,16 @@
 
 using namespace System;
 using namespace strutext;
-using namespace strutext::morpho;
+namespace m = strutext::morpho;
 
 int main(array<System::String ^> ^args)
 {
 
-	Morphologist<RussianAlphabet> morphologist;
-	MorphologistBase::LemList lem_list;
+	typedef m::Morphologist<m::RussianAlphabet> Morpher;
+	Morpher morpher;
+	Morpher::LemList lem_list;
 	std::string testStr = "мамы";
-	morphologist.Analize(testStr, lem_list);
+	morpher.Analize(testStr, lem_list);
 
     Console::WriteLine(L"Hello World");
 	Console::ReadLine();

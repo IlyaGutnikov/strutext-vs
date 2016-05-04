@@ -18,10 +18,10 @@
 
 #pragma once
 
-#include "fsm_defs.h"
-#include "fsm.h"
-#include "flex_transitions.h"
-#include "attr_fsm.h"
-#include "trie.h"
-#include "aho_corasick.h"
-#include "serializer.h"
+#include "automata/fsm_defs.h"
+#include "automata/fsm.h"
+#include "automata/flex_transitions.h"
+#include "automata/attr_fsm.h"
+#include "automata/trie.h"
+#include "automata/aho_corasick.h"
+#include "automata/serializer.h"
