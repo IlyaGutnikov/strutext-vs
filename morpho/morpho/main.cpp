@@ -1,5 +1,7 @@
 // morpho.cpp : main project file.
 
+#pragma once
+
 #include <sstream>
 #include "stdafx.h"
 #include "morpho.h"
