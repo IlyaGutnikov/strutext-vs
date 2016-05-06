@@ -100,7 +100,7 @@ struct EnglishPosDescription {
         break;
 
       default:
-        assert(false and "incorrect part of speech value");
+        assert(false && "incorrect part of speech value");
     }
     return st.str();
   }
@@ -125,7 +125,7 @@ struct EnglishPosDescription {
       case EnglishPos::POSSESSIVE_PS:        return "possesive";
 
       default:
-        assert(false and "incorrect part of speech value");
+        assert(false && "incorrect part of speech value");
     }
     return "";
   }
@@ -143,7 +143,7 @@ struct EnglishPosDescription {
     } else if (number & EnglishPos::MASS_NUMBER) {
       return "mass number";
     } else {
-        assert(false and "incorrect value");
+        assert(false && "incorrect value");
     }
     return "";
   }
@@ -157,7 +157,7 @@ struct EnglishPosDescription {
       case EnglishPos::NEUTER_GENDER:    return "neuter gender";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "";
   }
@@ -170,7 +170,7 @@ struct EnglishPosDescription {
       case EnglishPos::OBJECT_CASE:     return "object case";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "некорректное значение";
   }
@@ -188,7 +188,7 @@ struct EnglishPosDescription {
       case EnglishPos::IFTOBE_TIME:         return "if to be time";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "";
   }
@@ -202,7 +202,7 @@ struct EnglishPosDescription {
       case EnglishPos::THIRD_PERSON:   return "third person";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "некорректное значение";
   }
@@ -217,7 +217,7 @@ struct EnglishPosDescription {
       case EnglishPos::DEMONSTRATIVE_PNT: return "demostrative pronoun type";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "";
   }
@@ -230,7 +230,7 @@ struct EnglishPosDescription {
       case EnglishPos::ATTRIBUTIVE_PNF: return "attributive pronoun form";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "";
   }
@@ -244,7 +244,7 @@ struct EnglishPosDescription {
       case EnglishPos::SUPERLATIVE_DEGREE: return "superlative degree";
 
       default:
-        assert(false and "incorrect  value");
+        assert(false && "incorrect  value");
     }
     return "";
   }
@@ -258,7 +258,7 @@ struct EnglishPosDescription {
     } else if  (animation & EnglishPos::INANIMATE_ANIMATION) {
       return "inanimate animation";
     } else {
-      assert(false and "incorrect  value");
+      assert(false && "incorrect  value");
     }
     return "";
   }

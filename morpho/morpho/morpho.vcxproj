@@ -107,7 +107,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\libs\boost_1_60_0\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\libs\boost_1_60_0\stage\lib\*;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\libs\boost_1_60_0\lib64-msvc-14.0\*;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,7 +129,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\libs\boost_1_60_0\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>C:\libs\boost_1_60_0\stage\lib\*;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\libs\boost_1_60_0\lib64-msvc-14.0\*;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
