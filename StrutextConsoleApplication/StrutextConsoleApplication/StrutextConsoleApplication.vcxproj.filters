@@ -24,6 +24,120 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="alphabets\alphabet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alphabets\eng_alphabet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alphabets\rus_alphabet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aot\aot_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aot\eng_aot_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aot\rus_aot_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\ac_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\aho_corasick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\attr_fsm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\automata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\compact_trie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\flat_transitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\flex_transitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\fsm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\fsm_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\nfa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\nfa_operations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\nfa_printer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\serializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automata\trie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="encode\char_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="encode\char_unicode32_decoder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="encode\utf8_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="encode\utf8_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\eng_model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\eng_model_description.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\rus_model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="models\rus_model_description.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="morpho\base_storage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="morpho\morpho.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="morpho\morpho_modifier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="morpho\suffix_storage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="symbols\symbols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\filter_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\ngram_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\symbol_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\word_iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -38,6 +152,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="morpho\base_storage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="morpho\morpho.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="morpho\suffix_storage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="encode\char_unicode32_decoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="automata\automata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

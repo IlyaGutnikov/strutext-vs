@@ -141,14 +141,57 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="alphabets\alphabet.h" />
+    <ClInclude Include="alphabets\eng_alphabet.h" />
+    <ClInclude Include="alphabets\rus_alphabet.h" />
+    <ClInclude Include="aot\aot_parser.h" />
+    <ClInclude Include="aot\eng_aot_parser.h" />
+    <ClInclude Include="aot\rus_aot_parser.h" />
+    <ClInclude Include="automata\ac_iterator.h" />
+    <ClInclude Include="automata\aho_corasick.h" />
+    <ClInclude Include="automata\attr_fsm.h" />
+    <ClInclude Include="automata\automata.h" />
+    <ClInclude Include="automata\compact_trie.h" />
+    <ClInclude Include="automata\flat_transitions.h" />
+    <ClInclude Include="automata\flex_transitions.h" />
+    <ClInclude Include="automata\fsm.h" />
+    <ClInclude Include="automata\fsm_defs.h" />
+    <ClInclude Include="automata\nfa.h" />
+    <ClInclude Include="automata\nfa_operations.h" />
+    <ClInclude Include="automata\nfa_printer.h" />
+    <ClInclude Include="automata\serializer.h" />
+    <ClInclude Include="automata\trie.h" />
+    <ClInclude Include="encode\char_iterator.h" />
+    <ClInclude Include="encode\char_unicode32_decoder.h" />
+    <ClInclude Include="encode\utf8_generator.h" />
+    <ClInclude Include="encode\utf8_iterator.h" />
+    <ClInclude Include="models\eng_model.h" />
+    <ClInclude Include="models\eng_model_description.h" />
+    <ClInclude Include="models\model.h" />
+    <ClInclude Include="models\rus_model.h" />
+    <ClInclude Include="models\rus_model_description.h" />
+    <ClInclude Include="morpho\base_storage.h" />
+    <ClInclude Include="morpho\morpho.h" />
+    <ClInclude Include="morpho\morpho_modifier.h" />
+    <ClInclude Include="morpho\suffix_storage.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="symbols\symbols.h" />
+    <ClInclude Include="utility\filter_iterator.h" />
+    <ClInclude Include="utility\ngram_iterator.h" />
+    <ClInclude Include="utility\symbol_iterator.h" />
+    <ClInclude Include="utility\word_iterator.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="automata\automata.cpp" />
+    <ClCompile Include="encode\char_unicode32_decoder.cpp" />
+    <ClCompile Include="morpho\base_storage.cpp" />
+    <ClCompile Include="morpho\morpho.cpp" />
+    <ClCompile Include="morpho\suffix_storage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
