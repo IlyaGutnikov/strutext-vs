@@ -19,34 +19,24 @@ using namespace System;
 using namespace strutext;
 namespace m = strutext::morpho;
 
+typedef strutext::encode::Utf8Iterator<std::string::iterator> Utf8Iterator;
+
 int main()
 {
-	std::string line;
-	line = "Re: 124124124";
-	boost::regex pat("^Subject: (Re: |Aw: )*(.*)");
-	boost::smatch matches;
-
-	if (boost::regex_match(line, matches, pat)) {
-		Console::WriteLine(L"String match!");
-		std::cout << matches[2] << std::endl;
-	}
-	else {
-		Console::WriteLine(L"String dont match!");
-	}
-
-
 	typedef m::Morphologist<m::RussianAlphabet> Morpher;
 	Morpher morpher;
+
 	Morpher::LemList lem_list;
-	std::string testStr = "мамы";
-	morpher.Analize(testStr, lem_list);
+	std::string form = "мамы";
+	morpher.Analize(form, lem_list);
 
+	bool one_done = false, three_done = false;
 	for (Morpher::LemList::iterator it = lem_list.begin(); it != lem_list.end(); ++it) {
-	
-		Console::WriteLine(L"123412");
-	
-	}
 
+		System::Console::WriteLine("ID: {0}", it->id_);
+		System::Console::WriteLine("Attr: {0}", it->attr_);
+
+	}
     Console::WriteLine(L"Hello World");
 	Console::ReadLine();
     return 0;
