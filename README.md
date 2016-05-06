@@ -41,3 +41,10 @@ This installs the Boost header files under C:\Boost\include\boost-(version), and
 5. Add C:\Boost\include\boost-(version) to your include path.
 6. Add C:\Boost\lib\x64 to your libs path.
 
+Link to lib path:
+
+1. Right-click example in the Solution Explorer pane and select Properties from the resulting pop-up menu
+2. In Configuration Properties > Linker > Additional Library Directories, enter the path to the Boost binaries, e.g. C:\Program Files\boost\boost_1_60_0\lib\.
+3. From the Build menu, select Build Solution.
+
+
