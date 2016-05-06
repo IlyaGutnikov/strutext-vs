@@ -13,9 +13,13 @@ This installs the Boost header files under C:\Boost\include\boost-(version), and
 2. Start a 32-bit MSVC command prompt and change to the directory where Boost was unzipped.
 3. Run: `bootstrap`
 4. Run: `b2 toolset=msvc-12.0 --build-type=complete --libdir=C:\Boost\lib\i386 install`
+
         For Visual Studio 2012, use toolset=msvc-11.0
+        
         For Visual Studio 2010, use toolset=msvc-10.0
+        
         For Visual Studio 2015, use toolset=msvc-14.0
+        
 5. Add C:\Boost\include\boost-(version) to your include path.
 6. Add C:\Boost\lib\i386 to your libs path.
 
@@ -27,9 +31,13 @@ This installs the Boost header files under C:\Boost\include\boost-(version), and
 2. Start a 64-bit MSVC command prompt and change to the directory where Boost was unzipped.
 3. Run: `bootstrap`
 4. Run: `b2 toolset=msvc-12.0 --build-type=complete --libdir=C:\Boost\lib\x64 architecture=x86 address-model=64 install`
+
         For Visual Studio 2012, use toolset=msvc-11.0
+        
         For Visual Studio 2010, use toolset=msvc-10.0
+        
         For Visual Studio 2015, use toolset=msvc-14.0
+        
 5. Add C:\Boost\include\boost-(version) to your include path.
 6. Add C:\Boost\lib\x64 to your libs path.
 
