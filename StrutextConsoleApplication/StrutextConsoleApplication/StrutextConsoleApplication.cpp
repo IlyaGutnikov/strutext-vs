@@ -1,6 +1,7 @@
 // StrutextConsoleApplication.cpp : main project file.
 
 #include "stdafx.h"
+#include <fstream>
 #include <boost/regex.hpp>
 #include <iostream>
 #include <string>
@@ -28,6 +29,10 @@ int main()
 
 	uint32_t line_id = m::MorphoModifier::AddSuffixLine(morpher);
 
+	std::ofstream out("out.txt");
+	std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+	std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+
 	/**********************************************************************************************************************/
 
 	std::string suffix = "а"; //суффикс "а"
@@ -36,7 +41,7 @@ int main()
 	suffix = "ой"; //суффикс "ой"
 	m::MorphoModifier::AddSuffix(morpher, line_id, 2, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
 
-	suffix = "еньк"; //суффикс "еньк"
+	suffix = "енька"; //суффикс "еньк"
 	m::MorphoModifier::AddSuffix(morpher, line_id, 3, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
 
 	//Для слов "мама" и "папа"
@@ -56,14 +61,41 @@ int main()
 	/**********************************************************************************************************************/
 
 	Morpher::LemList lem_list;
-	std::string form = "папой";
+	std::string form = "папа";
 	morpher.Analize(form, lem_list);
 
-	string test_gen;
-	morpher.GenMainForm((uint32_t) 2, test_gen);
-
-	Console::WriteLine(L"Main form");
+	/**********************************************************************************************************************/
+	std::string test_gen;
+	morpher.GenMainForm((uint32_t) 2, test_gen);//работает верно, только необходимо 
+												//настроить консоль для вывода Utf-8
+	cout << "Main form dad" << endl;
 	cout << test_gen << endl;
+
+	morpher.GenMainForm((uint32_t) 1, test_gen);//работает верно, только необходимо 
+											   //настроить консоль для вывода Utf-8
+	cout << "Main form mom" << endl;
+	cout << test_gen << endl;
+
+	/**********************************************************************************************************************/
+	
+	std::string test_gen_mom;
+	test_gen_mom = morpher.Generate((uint32_t) 2, (uint32_t) 3);
+	cout << "Generate form dad" << endl;
+	cout << test_gen_mom << endl;
+
+	/**********************************************************************************************************************/
+
+	cout << "Generate all forms test for mom" << endl;
+	std::set<std::string> test_form_set;
+	morpher.GenAllForms((uint32_t)1, test_form_set);
+	for (string const& str : test_form_set)
+	{
+		cout << str << ' ';
+	}
+
+	out.flush();
+
+	/**********************************************************************************************************************/
 
 	for (Morpher::LemList::iterator it = lem_list.begin(); it != lem_list.end(); ++it) {
 
@@ -72,15 +104,7 @@ int main()
 
 	}
 
-	//Тестовый вывод
-	// ID: 1
-	// Attr : 1
-	// ID : 1
-	// Attr : 2
-	// ID : 1
-	// Attr : 3
-	// Hello World
-    Console::WriteLine(L"Hello World");
+    Console::WriteLine(L"Конец работы программы");
 	Console::ReadLine();
     return 0;
 }
