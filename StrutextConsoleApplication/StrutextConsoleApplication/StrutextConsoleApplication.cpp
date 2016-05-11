@@ -26,17 +26,60 @@ int main()
 	typedef m::Morphologist<m::RussianAlphabet> Morpher;
 	Morpher morpher;
 
+	uint32_t line_id = m::MorphoModifier::AddSuffixLine(morpher);
+
+	/**********************************************************************************************************************/
+
+	std::string suffix = "а"; //суффикс "а"
+	m::MorphoModifier::AddSuffix(morpher, line_id, 1, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
+
+	suffix = "ой"; //суффикс "ой"
+	m::MorphoModifier::AddSuffix(morpher, line_id, 2, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
+
+	suffix = "еньк"; //суффикс "еньк"
+	m::MorphoModifier::AddSuffix(morpher, line_id, 3, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
+
+	//Для слов "мама" и "папа"
+	std::string base = "мам"; //базовая часть слова
+	m::MorphoModifier::AddBase(morpher, 1, line_id, Utf8Iterator(base.begin(), base.end()), Utf8Iterator(), "мама");
+
+	base = "пап"; //базовая часть слова
+	m::MorphoModifier::AddBase(
+		morpher, //класс морфологиста
+		2, //идентификатор леммы, он необходим для всех функций генерации и анализа
+		line_id, //возмжные суффиксы
+		Utf8Iterator(base.begin(), base.end()), //начальный итератор
+		Utf8Iterator(), //конечный итератор
+		"папа" //базовая форма
+	);
+	
+	/**********************************************************************************************************************/
+
 	Morpher::LemList lem_list;
-	std::string form = "мамы";
+	std::string form = "папой";
 	morpher.Analize(form, lem_list);
 
-	bool one_done = false, three_done = false;
+	string test_gen;
+	morpher.GenMainForm((uint32_t) 2, test_gen);
+
+	Console::WriteLine(L"Main form");
+	cout << test_gen << endl;
+
 	for (Morpher::LemList::iterator it = lem_list.begin(); it != lem_list.end(); ++it) {
 
-		System::Console::WriteLine("ID: {0}", it->id_);
-		System::Console::WriteLine("Attr: {0}", it->attr_);
+		System::Console::WriteLine("ID: {0}", it->id_); //Lemma identifier.
+		System::Console::WriteLine("Attr: {0}", it->attr_); //Form attributes.
 
 	}
+
+	//Тестовый вывод
+	// ID: 1
+	// Attr : 1
+	// ID : 1
+	// Attr : 2
+	// ID : 1
+	// Attr : 3
+	// Hello World
     Console::WriteLine(L"Hello World");
 	Console::ReadLine();
     return 0;
