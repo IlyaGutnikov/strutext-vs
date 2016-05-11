@@ -43,12 +43,12 @@ int main()
 	std::string base = "мам"; //базовая часть слова
 	m::MorphoModifier::AddBase(morpher, 1, line_id, Utf8Iterator(base.begin(), base.end()), Utf8Iterator(), "мама");
 
-	base = "пап"; //базовая часть слова
+	std::string base_dad = "пап"; //базовая часть слова
 	m::MorphoModifier::AddBase(
 		morpher, //класс морфологиста
 		2, //идентификатор леммы, он необходим для всех функций генерации и анализа
 		line_id, //возмжные суффиксы
-		Utf8Iterator(base.begin(), base.end()), //начальный итератор
+		Utf8Iterator(base_dad.begin(), base_dad.end()), //начальный итератор
 		Utf8Iterator(), //конечный итератор
 		"папа" //базовая форма
 	);
