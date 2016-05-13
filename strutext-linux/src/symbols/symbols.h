@@ -101,6 +101,7 @@ inline const uint32_t& GetSymbolClass(const SymbolCode& code) {
 }
 
 inline SymbolCode ToLower(const SymbolCode& code) {
+  //return details::SYM_LOWER_TABLE[code];
   return details::SYM_LOWER_TABLE[code];
 }
 

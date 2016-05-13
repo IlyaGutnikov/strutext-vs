@@ -99,11 +99,10 @@ int main() {
 
 		for (Morpher::LemList::iterator it = lem_list.begin(); it != lem_list.end(); ++it) {
 
-			//cout << ("ID: {0}", it->id_); //Lemma identifier.
-			//cout << ("Attr: {0}", it->attr_); //Form attributes.
+			cout << ("ID: {0}", it->id_); //Lemma identifier.
+			cout << ("Attr: {0}", it->attr_); //Form attributes.
 
 		}
-	    return 0;
 
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;

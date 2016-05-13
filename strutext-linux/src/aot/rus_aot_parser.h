@@ -25,8 +25,8 @@
 #include <boost/algorithm/string.hpp>
 
 #include "aot_parser.h"
-#include "rus_alphabet.h"
-#include "rus_model.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/alphabets/rus_alphabet.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/models/rus_model.h"
 
 namespace strutext { namespace morpho {
 
