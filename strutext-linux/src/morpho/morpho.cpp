@@ -15,5 +15,5 @@
  * \brief  Morphology library definition.
  * \author Vladimir Lapshin.
  */
-#include "stdafx.h"
+
 #include "morpho.h"

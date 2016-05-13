@@ -20,7 +20,7 @@
 
 #include <stdint.h>
 
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\symbols\symbols.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/symbols/symbols.h"
 
 namespace strutext { namespace encode {
 

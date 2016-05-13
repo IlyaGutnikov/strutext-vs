@@ -15,7 +15,7 @@
  * \brief  UNNICODE32 code tables for single byte encodes.
  * \author Vladimir Lapshin.
  */
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "char_unicode32_decoder.h"
 
 namespace strutext { namespace encode {

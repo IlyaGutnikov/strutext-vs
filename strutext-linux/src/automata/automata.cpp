@@ -15,7 +15,7 @@
  * \brief  Automata library implementation.
  * \author Vladimir Lapshin.
  */
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "automata.h"
 #include "nfa.h"
 #include "nfa_operations.h"

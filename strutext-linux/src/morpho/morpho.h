@@ -28,13 +28,13 @@
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
 
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\encode\utf8_iterator.h"
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\encode\utf8_generator.h"
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\automata\flex_transitions.h"
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\automata\serializer.h"
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\automata\trie.h"
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\automata\fsm_defs.h"
-#include "C:\Users\igutnikov\git\strutext-vs\StrutextConsoleApplication\StrutextConsoleApplication\alphabets\alphabet.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/encode/utf8_iterator.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/encode/utf8_generator.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/automata/flex_transitions.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/automata/serializer.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/automata/trie.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/automata/fsm_defs.h"
+#include "/home/ilyagutnikov/git/strutext-vs/strutext-linux/src/alphabets/alphabet.h"
 #include "suffix_storage.h"
 #include "base_storage.h"
 
