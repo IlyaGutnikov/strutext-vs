@@ -47,4 +47,10 @@ Link to lib path:
 2. In Configuration Properties > Linker > Additional Library Directories, enter the path to the Boost binaries, e.g. C:\Program Files\boost\boost_1_60_0\lib\.
 3. From the Build menu, select Build Solution.
 
+##Генерация словаря
+Последовательность комманд:
 
+1. Скачать strutext (https://github.com/IlyaGutnikov/strutext) в папку strutext123
+2. Выполнить `cmake strutext-master` внутри strutext123
+3. Выполнить `cmake --build strutext123/`
+4. Выполнить аналог комманды с вашими путями `./Debug/bin/aot-parser -t /home/ilyagutnikov/git/strutext123/strutext-master/morpho/aot/rus_tabs.txt -d /home/ilyagutnikov/git/strutext123/strutext-master/morpho/aot/rus_morphs.txt -m rus -b aot-rus.bin`
