@@ -114,7 +114,7 @@ int main() {
 	cout << "\n" << endl;
 
 	string dict_path =
-			"/home/ilyagutnikov/git/strutext-vs/strutext-linux/dict/aot-rus.bin";
+			"dict/aot-rus.bin";
 
 	std::string word = "балалайкой";
 	std::ifstream dict(dict_path);
