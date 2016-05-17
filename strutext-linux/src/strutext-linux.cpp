@@ -21,6 +21,7 @@
 #include "models/eng_model.h"
 #include "models/rus_model_description.h"
 #include "models/eng_model_description.h"
+#include <fstream>
 
 using namespace std;
 using namespace strutext;
@@ -31,79 +32,119 @@ using namespace std;
 
 int main() {
 	typedef m::Morphologist<m::RussianAlphabet> Morpher;
-		Morpher morpher;
+	Morpher morpher;
 
-		uint32_t line_id = m::MorphoModifier::AddSuffixLine(morpher);
+	uint32_t line_id = m::MorphoModifier::AddSuffixLine(morpher);
 
-		/**********************************************************************************************************************/
+	fstream file(
+			"/home/ilyagutnikov/git/strutext-vs/strutext-linux/dict/aot-rus.bin");
 
-		std::string suffix = "а";
-		m::MorphoModifier::AddSuffix(morpher, line_id, 1, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
+	/**********************************************************************************************************************/
 
-		suffix = "ой";
-		m::MorphoModifier::AddSuffix(morpher, line_id, 2, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
+	std::string suffix = "а";
+	m::MorphoModifier::AddSuffix(morpher, line_id, 1,
+			Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
 
-		suffix = "енька";
-		m::MorphoModifier::AddSuffix(morpher, line_id, 3, Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
+	m::MorphoModifier::AddSuffix(morpher, line_id, 1,
+			Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
 
+	m::MorphoModifier::AddSuffixLine(morpher);
 
-		std::string base = "мам";
-		m::MorphoModifier::AddBase(morpher, 1, line_id, Utf8Iterator(base.begin(), base.end()), Utf8Iterator(), "мама");
+	suffix = "ой";
+	m::MorphoModifier::AddSuffix(morpher, line_id, 2,
+			Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
 
-		std::string base_dad = "пап";
-		m::MorphoModifier::AddBase(
-			morpher,
-			2,
-			line_id,
-			Utf8Iterator(base_dad.begin(), base_dad.end()),
-			Utf8Iterator(),
-			"папа"
-		);
+	suffix = "енька";
+	m::MorphoModifier::AddSuffix(morpher, line_id, 3,
+			Utf8Iterator(suffix.begin(), suffix.end()), Utf8Iterator());
 
-		/**********************************************************************************************************************/
+	std::string base = "мам";
+	m::MorphoModifier::AddBase(morpher, 1, line_id,
+			Utf8Iterator(base.begin(), base.end()), Utf8Iterator(), "мама");
 
-		Morpher::LemList lem_list;
-		std::string form = "мама";
-		morpher.Analize(form, lem_list);
+	std::string base_dad = "пап";
+	m::MorphoModifier::AddBase(morpher, 2, line_id,
+			Utf8Iterator(base_dad.begin(), base_dad.end()), Utf8Iterator(),
+			"папа");
 
-		/**********************************************************************************************************************/
-		std::string test_gen;
-		morpher.GenMainForm((uint32_t) 2, test_gen);
+	/**********************************************************************************************************************/
 
-		cout << "Main form dad" << endl;
-		cout << test_gen << endl;
+	Morpher::LemList lem_list;
+	std::string form = "мама";
+	morpher.Analize(form, lem_list);
 
-		morpher.GenMainForm((uint32_t) 1, test_gen);
+	/**********************************************************************************************************************/
+	std::string test_gen;
+	morpher.GenMainForm((uint32_t) 2, test_gen);
 
-		cout << "Main form mom" << endl;
-		cout << test_gen << endl;
+	cout << "Main form dad" << endl;
+	cout << test_gen << endl;
 
-		/**********************************************************************************************************************/
+	morpher.GenMainForm((uint32_t) 1, test_gen);
 
-		std::string test_gen_mom;
-		test_gen_mom = morpher.Generate((uint32_t) 2, (uint32_t) 3);
-		cout << "Generate form dad" << endl;
-		cout << test_gen_mom << endl;
+	cout << "Main form mom" << endl;
+	cout << test_gen << endl;
 
-		/**********************************************************************************************************************/
+	/**********************************************************************************************************************/
 
-		cout << "Generate all forms test for mom" << endl;
+	std::string test_gen_mom;
+	test_gen_mom = morpher.Generate((uint32_t) 2, (uint32_t) 3);
+	cout << "Generate form dad" << endl;
+	cout << test_gen_mom << endl;
+
+	/**********************************************************************************************************************/
+
+	cout << "Generate all forms test for mom" << endl;
+	std::set<std::string> test_form_set;
+	morpher.GenAllForms((uint32_t) 1, test_form_set);
+	for (string str : test_form_set) {
+		cout << str << ' ';
+	}
+
+	/**********************************************************************************************************************/
+
+	for (Morpher::LemList::iterator it = lem_list.begin(); it != lem_list.end();
+			++it) {
+
+		cout << ("ID: {0}", it->id_); //Lemma identifier.
+		cout << ("Attr: {0}", it->attr_); //Form attributes.
+
+	}
+
+	cout << "\n" << endl;
+
+	string dict_path =
+			"/home/ilyagutnikov/git/strutext-vs/strutext-linux/dict/aot-rus.bin";
+
+	std::string word = "балалайкой";
+	std::ifstream dict(dict_path);
+	if (not dict.is_open()) {
+		throw std::invalid_argument(
+				"Cannot open russian dictionary: " + dict_path);
+	}
+	//morpher = std::make_shared<Morpher>();
+	morpher.Deserialize(dict);
+
+	// Производим морфологический анализ формы.
+	strutext::morpho::MorphologistBase::LemList lemmas;
+	morpher.Analize(word, lemmas);
+
+	for (const auto& lemma : lemmas) {
+		string main_form;
+		cout << "Generate main form with dictionary" << endl;
+		if (morpher.GenMainForm(lemma.id_, main_form)) {
+			cout << main_form << "\n";
+		}
+
+		cout << "Generate all forms with dictionary" << endl;
 		std::set<std::string> test_form_set;
-		morpher.GenAllForms((uint32_t)1, test_form_set);
-		for (string str : test_form_set)
-		{
+		morpher.GenAllForms((uint32_t) lemma.id_, test_form_set);
+		for (string str : test_form_set) {
 			cout << str << ' ';
 		}
+	}
 
-		/**********************************************************************************************************************/
 
-		for (Morpher::LemList::iterator it = lem_list.begin(); it != lem_list.end(); ++it) {
-
-			cout << ("ID: {0}", it->id_); //Lemma identifier.
-			cout << ("Attr: {0}", it->attr_); //Form attributes.
-
-		}
-
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	//cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
 }
