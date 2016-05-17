@@ -9,7 +9,6 @@
 *.pch
 
 # Compiled Dynamic libraries
-*.so
 *.dylib
 *.db
 *.opendb
@@ -20,8 +19,6 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
-*.lib
 
 # Executables
 *.exe
@@ -33,5 +30,3 @@ Debug/
 lib/
 morpho/lib/
 ipch/
-
-*.bin
