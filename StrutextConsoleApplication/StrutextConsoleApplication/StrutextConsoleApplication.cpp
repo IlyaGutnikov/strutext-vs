@@ -104,6 +104,33 @@ int main()
 
 	}
 
+	string dict_path =
+		"C:/Users/igutnikov/git/strutext-vs/StrutextConsoleApplication/StrutextConsoleApplication/dict";
+
+	std::string word = "балалайкой";
+	std::ifstream dict(dict_path);
+	//morpher = std::make_shared<Morpher>();
+	morpher.Deserialize(dict);
+
+	// Производим морфологический анализ формы.
+	strutext::morpho::MorphologistBase::LemList lemmas;
+	morpher.Analize(word, lemmas);
+
+	for (const auto& lemma : lemmas) {
+		string main_form;
+		cout << "Generate main form with dictionary" << endl;
+		if (morpher.GenMainForm(lemma.id_, main_form)) {
+			cout << main_form << "\n";
+		}
+
+		cout << "Generate all forms with dictionary" << endl;
+		std::set<std::string> test_form_set;
+		morpher.GenAllForms((uint32_t)lemma.id_, test_form_set);
+		for (string str : test_form_set) {
+			cout << str << ' ';
+		}
+	}
+
     Console::WriteLine(L"Конец работы программы");
 	Console::ReadLine();
     return 0;
